@@ -1,4 +1,4 @@
-import wikipedia
+import wikipediaAPI
 
 def get_first_paragraph(title):
     try:
