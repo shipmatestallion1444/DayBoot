@@ -14,6 +14,7 @@ Eine App, die Basisinformationen provided, die Josi und Bene helfen die Lage in 
 ## Bereits gestartet
 - KVG API zum Laufen gekriegt
 - DB API zum Laufen gekriegt, API-key ist vorhanden, API ist abonniert
+- OpenWeatherAPI key existiert - funktioniert aber noch nicht
 
 ## TODO
 - Implementierung für die NINA API ausarbeiten
