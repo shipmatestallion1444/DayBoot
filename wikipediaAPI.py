@@ -1,5 +1,7 @@
 import wikipedia
 
+wikipedia.set_lang("de")
+
 def get_first_paragraph(title):
     try:
         # Fetch the Wikipedia page
@@ -15,7 +17,7 @@ def get_first_paragraph(title):
         return "Disambiguation page found"
 
 # Specify the Wikipedia article title
-article_title = "Python (programming language)"
+article_title = "Pessach"
 
 # Call the function to get the first paragraph
 first_paragraph = get_first_paragraph(article_title)
