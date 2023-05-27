@@ -43,4 +43,7 @@ def dashboard():
             schedule.append({'ankunft': ankunft, 'buslinie': buslinie, 'richtung': richtung})
     else:
         schedule = []
-    return render_template('../frontend/dashboard.html', schedule=schedule)
+    return render_template('dashboard.html', schedule=schedule)
+
+if __name__ == '__main__':
+    app.run(debug=True)
