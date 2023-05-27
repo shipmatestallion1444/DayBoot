@@ -15,17 +15,17 @@ data = response.json()
 
 # Extract the required information
 temperature = data["main"]["temp"]
-temperaturec = round(temperature - 273.15)
+temperature_c = round(temperature - 273.15)
 feels_like_temperature = data["main"]["feels_like"]
 feels_like_temperature_c = round(feels_like_temperature - 273.15)
 rain_status = data["weather"][0]["description"]
-rain_soon = "It will rain soon!" if "rain" in data else "It'll stay dry - hopefully"
+rain_outlook = "It will rain soon!" if "rain" in data else "It'll stay dry - hopefully"
 
 # Output the information
 print (data)
-print(f"{temperature}")
-print(f"Temperature: {temperaturec} °C")
+print(f"{temperature} KELVIN")
+print(f"Temperature: {temperature_c} °C")
 print(f"Feels Like: {feels_like_temperature_c} °C")
 print(f"Rain Status: {rain_status}")
-print(f"{rain_soon}")
+print(f"{rain_outlook}")
 

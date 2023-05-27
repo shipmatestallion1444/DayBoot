@@ -16,12 +16,12 @@ else:
     arrivals = None
 
 for arrival in arrivals['actual']:
-    #if arrival['actualRelativeTime'] > 70:
-    #    arrivaltime = str(arrival['actualRelativeTime']/60) + " Stunden."
-    #else:
-    #    arrivaltime = str(arrival['actualRelativeTime']) + " Minuten."
-    arrivaltime = str(arrival['actualRelativeTime'] / 100) + " Minuten."
-    print("Bus "+arrival['patternText'] + " nach " + arrival['direction'] + " fährt in " + str(round((arrival['actualRelativeTime']/60))) + " Minuten.")
+
+    ankunft = round(arrival['actualRelativeTime']/60)
+    buslinie = arrival['patternText']
+    richtung = arrival['direction']
+
+    print("Bus "+ buslinie + " nach " + richtung + " fährt in " + str(ankunft) + " Minuten.")
 
 
 print(arrivals)
