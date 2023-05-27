@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DayBoot</title>
+    <link rel="icon" type="image/png" href="images/daybooticon.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#"><img src="static/images/logo.png" alt="Dashboard Logo"></a>
+            <!-- Navigation links here -->
+        </nav>
+    </header>
+    <main>
+        <section id="calendar">
+            <!-- Calendar content goes here -->
+        </section>
+        <section id="holidays">
+            <!-- Holiday content goes here -->
+        </section>
+        <section id="weather">
+            <h2>Das Wetter</h2>
+            <ul>
+                <li id="temperature_c">Temperatur: 17 °C</li>
+                <li id="feels_like_temperature_c">Gefühlt: 16 °C</li>
+                <li id="rain_status">Rain Status: Clear Sky</li>
+                <li id="rain_outlook">It'll stay dry - hopefully</li>
+            </ul>
+        </section>        
+        <section id="catastrophe_warnings">
+            <!-- Catastrophe warning content goes here -->
+        </section>
+        <section id="cinema">
+            <!-- Cinema content goes here -->
+        </section>
+        <section id="bus_arrivals">
+            <h2>Busfahrplan</h2>
+            <h3>Haltestelle Südfriedhof</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Buslinie</th>
+                        <th>Ziel</th>
+                        <th>Ankunft</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entry in bus_schedule %}
+                    <tr>
+                        <td>{{ entry.buslinie }}</td>
+                        <td>{{ entry.richtung }}</td>
+                        <td>{{ entry.ankunft }} Minuten</td>
+                    </tr>
+                    {% endfor %}
+                    <!-- Other bus information will follow the same structure -->
+                </tbody>
+            </table>
+        </section>
+        <section id="train_departures">
+            <!-- Train departures content goes here -->
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+    <script src="static/js/main.js"></script>
+    <!-- Additional JS files --> 
+</body>
+</html>
