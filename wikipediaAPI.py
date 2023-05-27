@@ -19,6 +19,8 @@ def get_first_paragraph(title):
 # Specify the Wikipedia article title
 article_title = "Pessach"
 
+# WENN kein Feiertag (holiday = []), DANN random article
+
 # Call the function to get the first paragraph
 first_paragraph = get_first_paragraph(article_title)
 

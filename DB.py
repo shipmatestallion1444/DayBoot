@@ -15,5 +15,6 @@ data = res.read()
 
 result = data.decode("utf-8")
 
+print(result)
 
 # KIEL HBF: eva: 8000199 Kennung: AK
