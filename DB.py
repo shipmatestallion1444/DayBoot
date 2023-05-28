@@ -1,10 +1,11 @@
 import http.client
+from environment import DB_ID, DB_API_KEY
 
 conn = http.client.HTTPSConnection("apis.deutschebahn.com")
 
 headers = {
-    'DB-Client-Id': "e3f1f5b7404f3d29525d455264cc0919",
-    'DB-Api-Key': "0f0e551988852973d4b7642736b1fb5f",
+    'DB-Client-Id': DB_ID,
+    'DB-Api-Key': DB_API_KEY,
     'accept': "application/xml"
     }
 

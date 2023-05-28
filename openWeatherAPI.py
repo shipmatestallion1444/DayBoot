@@ -1,11 +1,12 @@
 import requests
 import time
+from environment import WEATHER_API_KEY
 # Coordinates of Kiel: 54.32133 10.13489
 # 54.3217/10.1412
-# OpenWeather API key: d056c9342b30b7eb2802231b3f1d2c54
+# OpenWeather API key:
 
 # API GET request URL with Kiel and the API key
-url = "https://api.openweathermap.org/data/2.5/weather?lat=54.32&lon=10.13&appid=d056c9342b30b7eb2802231b3f1d2c54"
+url = "https://api.openweathermap.org/data/2.5/weather?lat=54.32&lon=10.13&appid="+WEATHER_API_KEY
 
 # Make the request and extract the information
 response = requests.get(url)
