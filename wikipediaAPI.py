@@ -20,6 +20,7 @@ def get_first_paragraph(title):
 article_title = "Pessach"
 
 # WENN kein Feiertag (holiday = []), DANN random article
+# TODO Random artikel des Tages (was geschah am 26.05.)
 
 # Call the function to get the first paragraph
 first_paragraph = get_first_paragraph(article_title)
