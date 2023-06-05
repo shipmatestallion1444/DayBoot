@@ -4,10 +4,13 @@ import json
 # Gebietscode von https://www.xrepository.de/api/xrepository/urn:de:bund:destatis:bevoelkerungsstatistik:schluessel:rs_2021-07-31/download/Regionalschl_ssel_2021-07-31.json
 # ab Stelle 6 nur Nullen verwenden!
 ninaBaseUrl = "https://warnung.bund.de/api31"
-gebietscode="010020000000"
- 
+gebietscodeSegeberg="010600000000"
+gebietscodeKiel="010020000000"
+
+# Ascheberg: 055580004004
+# Nahe: 010605034058
 # aktuelle Warnmeldungen abrufen nach Gebietscode
-response = requests.get(ninaBaseUrl+"/dashboard/"+gebietscode+".json") # TODO: hier pruefen, ob Abruf erfolgreich war
+response = requests.get(ninaBaseUrl+"/dashboard/"+gebietscodeSegeberg+".json") # TODO: hier pruefen, ob Abruf erfolgreich war
 
 # wenn Abruf erfolgreich war, erhalten wir ein JSON
 warnungen = response.json()

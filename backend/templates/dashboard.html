@@ -36,12 +36,17 @@
             {% endfor %}
         </section>        
         <section id="catastrophe_warnings">
-            <!-- Catastrophe warning content goes here -->
+            <h2 id="katwarnung">Warnung!</h2>
+            {% for entry in nina_data %}
+            <ul>
+                <li class="warntext">{{ entry }}</li>
+            </ul>
+            {% endfor %}
         </section>
         <section id="local_news">
-            <h2>Regionale Nachrichten</h2>
+            <h2>Nachrichten Schleswig-Holstein</h2>
             <ul>
-            {% for entry in news_data %}
+            {% for entry in localnews_data %}
             <li>
                 <h3>{{ entry.title }}</h3>
                 <p>{{ entry.description }}</p>
