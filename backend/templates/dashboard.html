@@ -38,6 +38,20 @@
         <section id="catastrophe_warnings">
             <!-- Catastrophe warning content goes here -->
         </section>
+        <section id="local_news">
+            <h2>Regionale Nachrichten</h2>
+            <ul>
+            {% for entry in news_data %}
+            <li>
+                <h3>{{ entry.title }}</h3>
+                <p>{{ entry.description }}</p>
+                {% if entry.image %}
+                    <img src="{{ entry.image }}" alt="{{ entry.title }}">
+                {% endif %}
+            </li>
+            {% endfor %}
+            </ul>
+        </section>
         <section id="cinema">
             <!-- Cinema content goes here -->
         </section>
