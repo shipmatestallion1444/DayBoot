@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DayBoot</title>
     <link rel="icon" type="image/png" href="images/daybooticon.png">
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"> -->
 </head>
 <body>
     <header>
@@ -19,10 +22,10 @@
             <h1>DayBoot</h1>
         </section>
         <section id="calendar">
-            <!-- Calendar content goes here -->
+            <h2>Kalenderdings</h2>
         </section>
         <section id="holidays">
-            <!-- Holiday content goes here -->
+            <h2>Feiertage</h2>
         </section>
         <section id="weather">
             <h2>Das Wetter</h2>
@@ -30,21 +33,27 @@
             <ul>
                 <li id="temperature_c">Temperatur: {{ entry.temperatur_c }}°C</li>
                 <li id="feels_like_temperature_c">Gefühlt: {{ entry.feels_like_c }} °C</li>
-                <li id="rain_status">Rain Status: {{ entry.rain_status }}</li>
-                <li id="rain_outlook">I don't know yet...</li>
+                <li id="rain_status">{{ entry.rain_status }}</li>
             </ul>
             {% endfor %}
         </section>        
         <section id="catastrophe_warnings">
-            <h2 id="katwarnung">Warnung!</h2>
-            {% for entry in nina_data %}
-            <ul>
-                <li class="warntext">{{ entry }}</li>
-            </ul>
-            {% endfor %}
+            <h2 id="katwarnung">NINA</h2>
+            {% if nina_data is string %}
+                <ul>
+                    <li class="warntext">{{ nina_data }}</li>
+                </ul>
+            {% else %}
+                {% for entry in nina_data %}
+                <ul>
+                    <li class="warntext">{{ entry }}</li>
+                </ul>
+                {% endfor %}
+            {% endif %}
         </section>
         <section id="local_news">
             <h2>Nachrichten Schleswig-Holstein</h2>
+            <p>bereitgestellt vom NDR</p>
             <ul>
             {% for entry in localnews_data %}
             <li>
@@ -58,7 +67,7 @@
             </ul>
         </section>
         <section id="cinema">
-            <!-- Cinema content goes here -->
+            <h2>Kinoprogramm</h2>
         </section>
         <section id="bus_arrivals">
             <h2>Busfahrplan</h2>

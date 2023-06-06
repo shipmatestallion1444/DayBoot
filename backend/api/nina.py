@@ -22,4 +22,7 @@ def get_nina_warnings():
                 if "<br/>" in meldungsText:
                     meldungsText = meldungsText.replace("<br/>", " ")
                 warnungen_list.append(meldungsText)
-        return warnungen_list
+        if warnungen_list == []:
+            return "Aktuell keine Warnungen vorliegend."
+        else:
+            return warnungen_list
